@@ -1,4 +1,7 @@
 
+## Create Azure Active Directory users
+
+
 resource "azuread_user" "aduser1" {
   user_principal_name = "hsingh@karmjitocpoutlook.onmicrosoft.com"
   display_name        = "Harry"
