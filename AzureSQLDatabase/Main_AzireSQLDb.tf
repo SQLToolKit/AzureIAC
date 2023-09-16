@@ -4,7 +4,7 @@
 
 data "azurerm_mssql_server" "srvid" {
   name                = "sqlinstvm"
-  resource_group_name = "SQLLab"
+  resource_group_name = "sqlrsgp"
 }
 
 # Create Azure SQL database

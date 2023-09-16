@@ -1,6 +1,6 @@
 # Create Resource group
 resource "azurerm_resource_group" "resource_grp" {
-  name     = "SQLLab"
+  name     = "sqlrsgp"
   location = "East US"
 }
 
