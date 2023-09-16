@@ -1,4 +1,13 @@
 
+/* 
+This script creates
+   Resource Group
+   SQL Server 
+   SQL database
+   Set Firewall rules and allow access to Azure services
+*/
+
+
 # Create Resource group
 resource "azurerm_resource_group" "resource_grp" {
   name     = "SQLLab"

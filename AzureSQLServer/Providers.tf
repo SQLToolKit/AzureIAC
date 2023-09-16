@@ -1,5 +1,5 @@
 
-## Providers list
+## Providers information
 
 terraform {
   required_providers {
