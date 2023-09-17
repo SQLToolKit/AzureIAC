@@ -1,8 +1,7 @@
 
 # Create a new Azure SQL database under existing Azure SQL Server
 
-
-data "azurerm_mssql_server" "srvid" {
+data "azurerm_mssql_server" "sqlsrv" {
   name                = "sqlinstvm"
   resource_group_name = "sqlrsgp"
 }
@@ -10,7 +9,7 @@ data "azurerm_mssql_server" "srvid" {
 # Create Azure SQL database
 resource "azurerm_mssql_database" "sql_db" {
   name                 = "dbs3"
-  server_id            = data.azurerm_mssql_server.srvid.id
+  server_id            = "${data.azurerm_mssql_server.sqlsrv.id}"
   storage_account_type = "Local"
   geo_backup_enabled   = false
   sku_name             = "Basic"

@@ -18,6 +18,9 @@ resource "azurerm_subnet" "subnet1" {
   resource_group_name  = data.azurerm_resource_group.rsgid.name
   address_prefixes     = ["10.0.1.0/24"]
   virtual_network_name = azurerm_virtual_network.mainvnet.name
+  depends_on = [
+     azurerm_virtual_network.mainvnet
+]
 }
 
 # Create a subnet_2 under the vnet
@@ -26,4 +29,7 @@ resource "azurerm_subnet" "subnet2" {
   resource_group_name  = data.azurerm_resource_group.rsgid.name
   address_prefixes     = ["10.0.2.0/24"]
   virtual_network_name = azurerm_virtual_network.mainvnet.name
+  depends_on = [
+     azurerm_virtual_network.mainvnet
+]
 }

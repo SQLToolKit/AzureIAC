@@ -35,6 +35,10 @@ resource "azurerm_network_interface" "netinterface" {
     #private_ip_address            = "10.0.1.4"
     public_ip_address_id          = azurerm_public_ip.publicip.id
   }
+  depends_on = [
+    azurerm_public_ip.publicip
+  ]
+
 }
 
 resource "azurerm_windows_virtual_machine" "Windowsvm" {
@@ -59,4 +63,7 @@ resource "azurerm_windows_virtual_machine" "Windowsvm" {
     sku       = "2019-Datacenter"
     version   = "latest"
   }
+  depends_on = [
+    azurerm_network_interface.netinterface
+  ]
 }
